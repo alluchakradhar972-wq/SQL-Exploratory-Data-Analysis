@@ -1,1 +1,193 @@
+# 📊 SQL Exploratory Data Analysis (EDA) Project
 
+## 📌 Project Overview
+
+This project focuses on performing **Exploratory Data Analysis (EDA) using SQL Server (T-SQL)** to understand business data, identify patterns, evaluate performance, and generate meaningful insights.
+
+The project follows a structured analytical workflow, starting with database exploration and data profiling and progressing toward business metrics, category-level comparisons, and top- and bottom-performing products and customers.
+
+The primary objective is to demonstrate how SQL can transform raw relational data into actionable business insights that support data-driven decision-making.
+
+## 🎯 Project Objectives
+
+- Explore the database structure and understand relationships between tables.
+- Identify dimensions and measures relevant to business analysis.
+- Examine unique values, date ranges, and data distributions.
+- Calculate key business metrics using SQL aggregate functions.
+- Analyze performance across products, customers, countries, and categories.
+- Identify top- and bottom-performing products and customers.
+- Use joins, grouping, sorting, and window functions to answer business questions.
+- Develop a reusable framework for conducting SQL-based EDA.
+
+## 🛠️ Tools and Technologies
+
+- **Database:** Microsoft SQL Server
+- **Query Language:** T-SQL
+- **Concepts:** Exploratory Data Analysis, Business Metrics, Data Profiling, Relational Data Analysis
+- **SQL Techniques:** Aggregations, Joins, GROUP BY, ORDER BY, Subqueries, Common Table Expressions (CTEs), Window Functions, TOP
+
+## 📂 Project Workflow
+
+### 1. Database Exploration
+
+Understand the structure of the database before beginning the analysis.
+
+- Explore database objects, tables, and columns.
+- Inspect table schemas and relationships.
+- Identify relevant fact and dimension tables.
+- Examine available data types and key columns.
+
+### 2. Dimensions and Measures
+
+Classify the available fields according to their analytical purpose.
+
+- **Dimensions:** Fields used to categorize or segment data, such as product names, customer attributes, countries, and dates.
+- **Measures:** Numeric fields that can be meaningfully aggregated, such as sales revenue and quantities sold.
+- Distinguish identifiers from additive business measures to avoid misleading calculations.
+
+### 3. Data Profiling and Exploration
+
+Investigate the contents and basic characteristics of the dataset.
+
+- Identify distinct values in important dimension columns.
+- Examine product hierarchies and category structures.
+- Determine the minimum and maximum dates available.
+- Profile numeric measures using `MIN()`, `MAX()`, `SUM()`, and `AVG()`.
+- Count records and inspect the dataset's overall scope.
+
+### 4. Key Business Metrics
+
+Calculate high-level metrics to understand overall business performance.
+
+Examples include:
+
+- Total sales revenue
+- Total quantity sold
+- Number of orders
+- Number of customers
+- Number of products
+- Average sales value
+
+Pay particular attention to the distinction between counting order records and counting unique orders, especially when an order contains multiple product lines.
+
+### 5. Magnitude Analysis
+
+Compare business performance across different dimensions by aggregating measures.
+
+Examples include:
+
+- Revenue by country
+- Revenue by product category and subcategory
+- Sales by gender
+- Quantity sold by product
+- Customer-level spending
+- Product and category contribution to overall sales
+
+This stage helps reveal which segments contribute most to business performance.
+
+### 6. Ranking Analysis
+
+Identify the strongest and weakest performers using aggregate calculations and ranking techniques.
+
+- Top-selling products
+- Lowest-performing products
+- Best-performing product categories
+- Top customers by spending
+- Customers contributing the least revenue
+- Highest- and lowest-performing subcategories
+
+Techniques such as `TOP`, `ORDER BY`, `ROW_NUMBER()`, `RANK()`, and subqueries can be used depending on the analytical requirement.
+
+## 💡 Key Business Questions
+
+This project uses SQL to investigate questions such as:
+
+1. What is the overall scale of the business in terms of revenue, orders, customers, and products?
+2. Which countries generate the highest sales revenue?
+3. Which product categories and subcategories perform best?
+4. Which products sell the most units?
+5. Who are the highest-value customers?
+6. How do sales differ across customer segments?
+7. What date range does the dataset cover?
+8. Which products and customers are the strongest and weakest performers?
+9. How can duplicate order-line records affect business metrics?
+10. Which categories or customer segments deserve further investigation?
+
+## 📈 Expected Analytical Outcomes
+
+The analysis aims to produce:
+
+- A clearer understanding of the database structure.
+- A consolidated overview of key business metrics.
+- Comparisons of revenue and quantities across business dimensions.
+- Rankings of products, categories, and customers.
+- A foundation for identifying opportunities and investigating underperformance.
+- Reusable SQL queries for future business analysis.
+
+*Actual findings should be documented here after running the queries against the dataset.*
+
+## 🧠 Key Learnings
+
+Through this project, I aim to strengthen my understanding of:
+
+- SQL-based exploratory data analysis.
+- Relational database exploration and metadata queries.
+- Aggregate functions and grouped analysis.
+- Joins across fact and dimension tables.
+- Correct counting of unique business entities.
+- The impact of dimension cardinality on query results.
+- Ranking and comparison using window functions.
+- Translating business questions into structured SQL queries.
+
+## 📁 Repository Structure
+
+```text
+SQL-Exploratory-Data-Analysis/
+│
+├── Datasets/
+├── README.md
+├── scripts/
+│   ├── 01_initialize_database.sql
+│   ├── 02_explore_database_objects_and_columns.sql
+│   ├── 03_explore_category_divisions.sql
+│   ├── 04_boundaries_exploration.sql
+│   ├── 05_important_questions.sql
+│   ├── 06_customers_by_country.sql
+│   ├── 07_customers_by_gender.sql
+│   ├── 08_products_by_category.sql
+│   ├── 09_average_cost_by_category.sql
+│   ├── 10_revenue_by_category.sql
+│   ├── 11_revenue_by_customer.sql
+│   ├── 12_item_distribution_across_countries.sql
+│   ├── 13_big_numbers.sql
+│   ├── 14_top_5_products_by_revenue.sql
+│   ├── 15_worst_performing_products.sql
+│   ├── 16_top_10_customers_by_revenue.sql
+│   └── 17_top_3_customers_with_fewest_orders.sql
+
+```
+
+*The structure above is a suggested organization. Update the filenames and folders to match the files actually present in the repository.*
+
+## 🚀 How to Run the Project
+
+1. Install or access Microsoft SQL Server and SQL Server Management Studio (SSMS).
+2.Download the data sets and upload them into SQL Server Management Studio (SSMS).
+3. Open the SQL scripts in SSMS..
+4. Execute the scripts in sequence, starting with database exploration.
+5. Review the results and document meaningful business findings.
+
+## 🔮 Future Improvements
+
+- Extend the analysis using time-based sales trends.
+- Perform month-over-month and year-over-year comparisons.
+- Investigate outliers and potential data quality issues.
+- Build an interactive Power BI dashboard using the analyzed data.
+- Apply Python for deeper statistical analysis and visualization.
+- Use the resulting features and insights as a foundation for future machine learning projects.
+
+## 👨‍💻 Project Summary
+
+This project demonstrates a structured approach to **business-oriented data exploration using SQL Server**. By progressing from understanding the data to calculating metrics, comparing categories, and ranking performers, it establishes a practical foundation for more advanced analytics and business intelligence projects.
+
+**Skills demonstrated:** SQL Server · T-SQL · Exploratory Data Analysis · Data Profiling · Business Metrics · Joins · Aggregations · Window Functions · Analytical Thinking
